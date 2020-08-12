@@ -1,0 +1,5 @@
+#!/bin/bash
+ssh root@192.168.2.$1 rm -rf /u01/apache-tomcat-7.0.91/webapps/bgecor/react/*
+cd /Users/Eugene/Desktop/dev/s112/s112-ui/s112-ui-client/src/main/frontend/forecast
+npm run build
+scp -r ./build/* root@192.168.2.$1:/u01/apache-tomcat-7.0.91/webapps/bgecor/react/

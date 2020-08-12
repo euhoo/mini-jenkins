@@ -1,0 +1,5 @@
+#!/bin/bash
+ssh root@192.168.2.$1 rm -rf /opt/bg/gis-ui/*
+cd /Users/Eugene/Desktop/dev/gis-ui/gis-ui
+npm run gis-ui-build
+scp -r ./build/* root@192.168.2.$1:/opt/bg/gis-ui/
