@@ -1,5 +1,6 @@
 import express from 'express'
-
+import deploy from './routes/deploy.js'
+import basic from './routes/basic.js'
 const app = express();
 
 export default (port, api, serverStartFunc) => {
@@ -7,10 +8,8 @@ export default (port, api, serverStartFunc) => {
 	app.use(express.static('dist'));
 
 	//setup routes
-	app.use(`/${api}/user`, user);
-	app.use(`/${api}/words`, words);
-	app.use(`/${api}/`, indexRouter);
-	app.use(`/`, indexRouter);
+	app.use(`/${api}/deploy`, deploy);
+	app.use(`/${api}/`, basic);
 
 	//setup logging
 	// app.use(logging);
