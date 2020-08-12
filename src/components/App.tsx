@@ -1,6 +1,7 @@
 import React, {Component} from "react";
-import {Button} from "primereact/button";
+import {Route, HashRouter as Router} from "react-router-dom";
 import axios from 'axios'
+import {Btn} from "./btn";
 
 
 export class App extends Component {
@@ -12,10 +13,11 @@ export class App extends Component {
     }
     render() {
         return (
-            <div>
-                Hello World
-                <Button onClick={this.clickBtn}/>
-            </div>
+            <Router>
+                {/*<Link to="/">Home</Link>*/}
+                <Route path="/" component={Btn}/>
+            </Router>
+
         )
     }
 }
